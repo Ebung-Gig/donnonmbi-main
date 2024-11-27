@@ -31,12 +31,20 @@ environ.Env.read_env(BASE_DIR / ".env")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = env.bool("DEBUG", default=False)
+DEBUG = env.bool("DEBUGMODE", default=False)
 
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["127.0.0.1", "localhost"])
 
 SECRET_KEY = env.str("SECRET_KEY")
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://donnonmbi.fly.dev",  # Use HTTPS for production
+    "http://donnonmbi.fly.dev",  # Use HTTP if needed, but HTTPS is recommended
+]
+
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # Application definition
