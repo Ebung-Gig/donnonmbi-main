@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Board of Trustees | DONNONMBI CARE FOUNDATION{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Background Image from Static Files -->
+<section
+    class="bg-success text-white text-center py-5"
+   
+>
+    <div class="container">
+        <h1 class="display-4 fw-bold">Board of Trustees</h1>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row">
+        {% for trustee in trustees %}
+            <div class="col-md-3">
+                <a href="{% url 'trustee_detail' trustee.pk %}" class="text-decoration-none">
+                    <div class="card mb-4 text-center">
+                        <div class="avatar-container">
+                            {% if trustee.picture %}
+                                <img
+                                    src="{{ trustee.picture.url }}"
+                                    class="avatar card-img-top mx-auto"
+                                    alt="{{ trustee.name }}'s Avatar"
+                                >
+                            {% else %}
+                                <i class="fas fa-user-circle avatar-icon"></i>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ trustee.name }}</h5>
+                            {% if trustee.position %}
+                                <p class="card-text">{{ trustee.position }}</p>
+                            {% else %}
+                                <p class="card-text">No position available.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

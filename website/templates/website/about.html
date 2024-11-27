@@ -1,0 +1,409 @@
+{% extends "base.html" %} {% load static %} {% block title %}About Us |
+DONNONMBI CARE FOUNDATION{% endblock %} {% block content %}
+<!-- Custom CSS for Active Accordion Color and Border -->
+<style>
+  /* Custom styles for the active accordion button */
+  .accordion-button:not(.collapsed) {
+    background-color: #28a745; /* Light Green background */
+    color: white; /* White text color */
+    border-color: #28a745; /* Light Green border color */
+  }
+
+  /* Optional: Change the icon color when the accordion is expanded */
+  .accordion-button:not(.collapsed) .accordion-icon {
+    color: white;
+  }
+
+  /* Optional: Modify hover state for the accordion button */
+  .accordion-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    color: white;
+    border-color: #218838; /* Darker green border on hover */
+  }
+  .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.5); /* Light Green shadow */
+    border-color: #28a745; /* Light Green border color */
+  }
+</style>
+
+<!-- Hero Section with Background Image from Static Files -->
+<section
+  class="bg-success text-white text-center py-5"
+  style="
+    background-image: url('{% static 'images/image1.jpg' %}');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div class="container">
+    <h1 class="display-4 fw-bold">About the Foundation</h1>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Left Section: Video and Text -->
+      <div class="col-md-6 mb-4">
+        <div class="ratio ratio-16x9">
+            <iframe
+                src="https://www.youtube.com/embed/example_video"
+                title="About Us Video"
+                frameborder="0"
+                allowfullscreen
+                style="border-radius: 20px;" 
+            ></iframe>
+        </div>
+        
+        <p class="mt-3">
+          Donnombi Foundation is a private independent philanthropic grantmaking
+          organisation committed to improving the quality of life of Nigerians,
+          by supporting health and education interventions implemented by
+          Non-governmental Organisations (NGOs) registered and working in
+          Nigeria.
+        </p>
+        <p class="mt-3">
+          The Foundation was established in 2009 by Lt. Gen. Theophilus Yakubu
+          Danjuma, GCON – a retired Nigerian Army Chief of Staff, an astute and
+          successful businessman. The Foundation is based in Abuja, Nigeria with
+          state offices in Taraba and Edo.
+        </p>
+      </div>
+
+      <!-- Right Section: Accordion -->
+      <div class="col-md-6">
+        <div class="accordion" id="aboutAccordion">
+          <!-- Mission -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMission">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseMission"
+                aria-expanded="true"
+                aria-controls="collapseMission"
+              >
+                Mission
+              </button>
+            </h2>
+            <div
+              id="collapseMission"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingMission"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                Our mission is to ensure access to quality healthcare and
+                education for underserved communities in Nigeria.
+              </div>
+            </div>
+          </div>
+
+          <!-- Vision -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingVision">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseVision"
+                aria-expanded="false"
+                aria-controls="collapseVision"
+              >
+                Vision
+              </button>
+            </h2>
+            <div
+              id="collapseVision"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingVision"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                To contribute to building a Nigeria where all citizens have
+                access to affordable quality health care, education and equal
+                opportunities to realize their potential.
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Goals -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGoals">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseGoals"
+                aria-expanded="false"
+                aria-controls="collapseGoals"
+              >
+                Main Goals
+              </button>
+            </h2>
+            <div
+              id="collapseGoals"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingGoals"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    Enhance community health care by providing free medical
+                    services to rural communities which lack adequate medical
+                    facilities.
+                  </li>
+                  <li>
+                    Improve the quality of education of children and young
+                    people.
+                  </li>
+                  <li>
+                    Alleviate the extreme poverty in communities across the
+                    country by providing humanitarian assistance, clean drinking
+                    water, and encouraging the empowerment of women.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Values -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingValues">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFocusAreas"
+                aria-expanded="false"
+                aria-controls="collapseFocusAreas"
+              >
+                Values
+              </button>
+            </h2>
+            <div
+              id="collapseFocusAreas"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingValues"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                <ul>
+                  <li>Informed and responsive grant-making.</li>
+                  <li>Community involvement and participation.</li>
+                  <li>Learning and innovation.</li>
+                  <li>Promoting philanthropy in Nigeria.</li>
+                  <li>Accountability to beneficiaries.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- How the Foundation Works -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingHowItWorks">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseHowItWorks"
+                aria-expanded="false"
+                aria-controls="collapseHowItWorks"
+              >
+                How the Foundation Works
+              </button>
+            </h2>
+            <div
+              id="collapseHowItWorks"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingHowItWorks"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                The Foundation works by partnering with credible NGOs and
+                grassroots organizations that are focused on health and
+                education. Our funding model is based on a transparent and
+                responsive approach, ensuring that our resources are directed to
+                the most deserving projects.
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership and Collaboration -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPartnership">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePartnership"
+                aria-expanded="false"
+                aria-controls="collapsePartnership"
+              >
+                Partnership and Collaboration
+              </button>
+            </h2>
+            <div
+              id="collapsePartnership"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingPartnership"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                    The Foundation employs networking and partnership building as tools to expand its reach. We work towards establishing a wide array of collaborative relationships aimed at leveraging additional human and material resources to maximise our impact.
+                </p>
+                <strong>
+                    Resource Partners
+                </strong>
+                <p>
+                    These are institutions or persons that are able, ready, and willing to put resources in cash or kind to support project ideas as the basis for collaboration. Resource partners envisaged include persons interested in our work, other Foundations, National and International Development Partners.
+                </p>
+                <strong>
+                    Network Partners
+                </strong>
+                <p>
+                    The primary value in Network partners is in co-creating and amplifying the work of partnerships. These include associations and coalitions that the Foundation belongs to either nationally, regionally, or globally. These partners co-contribute to network events and activities. An example in this category is the African Philanthropy Forum (APF)
+                </p>
+                <strong>
+                    Learning Partners
+                </strong>
+                <p>
+                    These are partnerships for mutual learning. This type of partnership currently exists between TV Danjuma Foundation and the Foundation Center in New York.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grantmaking -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGrantmaking">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseGrantmaking"
+                aria-expanded="false"
+                aria-controls="collapseGrantmaking"
+              >
+                Grantmaking
+              </button>
+            </h2>
+            <div
+              id="collapseGrantmaking"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingGrantmaking"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  The Foundation’s grantmaking approach is catalytic, We work
+                  with partners to better understand challenges faced by
+                  communities where we work to design actionable solutions to
+                  address identified needs. Our grantmaking process is
+                  two-pronged – Annual and Discretionary Grants.
+                </p>
+
+                <strong> Annual Grants </strong>
+
+                <p>
+                  This is the primary funding scheme of the Foundation through
+                  which grants are awarded once annually after a careful
+                  screening process by Management and the Board of Trustees.
+                  Every year, a Call for Concept Notes is published, requesting
+                  qualified organisations based in Nigeria to apply for funds to
+                  implement projects in the Foundation’s focus areas of Health
+                  and Education.
+                </p>
+                <p>
+                  The Foundation’s annual grantmaking process is split into main
+                  grants and community funds.
+                </p>
+                <strong> Main Grants </strong>
+                <p>
+                  The Foundation supports initiatives across Nigeria by inviting
+                  NGOs to apply for funding to implement projects within its
+                  focus areas of Health and Education. Interventions under this
+                  grant can be implemented in any state in Nigeria.
+                </p>
+                <strong> Community Funds </strong>
+                <p>
+                  Taraba and Edo states are the home states of the founder’s
+                  family. As a result, the Foundation annually supports special
+                  initiatives to be implemented in these states through its
+                  community fund schemes for grassroot organisations based and
+                  working in these states. The Taraba Community Fund was
+                  launched in February 2011, while the Edo Community Fund was
+                  launched in February 2012. The Community fund brings funding
+                  closer to the communities and makes it possible for less
+                  formally constituted organisations to receive support.
+                </p>
+
+                <p>
+                  The Community Fund provides small grants to small NGOs and
+                  CBOs to carry out innovative development activities geared
+                  towards addressing the social-economic challenges within rural
+                  communities. It also provides technical and institutional
+                  assistance as a way of addressing organisational development
+                  and enhancing community engagement in targeted social
+                  initiatives. Interventions under this grant can only be
+                  implemented in Taraba and Edo States by organisations
+                  registered and based there.
+                </p>
+                <strong> Discretionary Grants </strong>
+                <p>
+                  The Grant is administered all year-round to facilitate rapid
+                  response to people facing humanitarian emergencies in Nigeria
+                  and for interventions determined to be within the Foundation’s
+                  focus areas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFocusAreas">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFocusAreas"
+                aria-expanded="false"
+                aria-controls="collapseFocusAreas"
+              >
+                Focus Areas
+              </button>
+            </h2>
+            <div
+              id="collapseFocusAreas"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFocusAreas"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    <a href="{% url 'health_programme' %}" class="text-black"
+                      >Health</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{% url 'education_programme' %}" class="text-black"
+                      >Education</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
