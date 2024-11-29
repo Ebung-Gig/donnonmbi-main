@@ -26,19 +26,24 @@ DANNONMBI CARE FOUNDATION{% endblock %} {% block content %}
   }
 </style>
 
-<!-- Hero Section with Background Image from Static Files -->
+
+
 <section
   class="bg-success text-white text-center py-5"
   style="
     background-image: url('{% static 'images/image4.jpg' %}');
     background-size: cover;
     background-position: center;
+    height: 70vh; /* Full screen height */
+    position: relative; /* Make sure the container is positioned relative to the section */
   "
 >
-  <div class="container">
+  <div class="container" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
     <h1 class="display-4 fw-bold">About the Foundation</h1>
   </div>
 </section>
+
+
 
 <!-- About Section -->
 <section class="py-5">

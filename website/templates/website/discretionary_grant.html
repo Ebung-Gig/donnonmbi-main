@@ -5,19 +5,13 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section
-  class="bg-success text-white text-center py-5"
-  style="
-    background-image: url('{% static 'images/image13.jpg' %}');
-    background-size: cover;
-    background-position: center;
-  "
->
-  <div class="container">
+<section class="bg-success text-white text-center py-5" style="background-image: url('{% static 'images/image13.jpg' %}'); background-size: cover; background-position: center; height: 70vh; position: relative;">
+  <div class="container" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
     <h1 class="display-4 fw-bold">Discretionary Grant</h1>
     <p class="lead">Supporting small but impactful projects.</p>
   </div>
 </section>
+
 
 <!-- About the Grant -->
 <section class="py-5 bg-light">

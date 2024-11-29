@@ -1,67 +1,138 @@
-/* Add padding to the navbar */
-.navbar {
-    padding: 1rem 1.5rem;
-}
-
-/* Hero text shadow for visibility */
-.hero-text {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Use Poppins for the entire site */
+/* General styles */
 body {
     font-family: 'ABeeZee', sans-serif;
 }
 
-/* Example: Set different weights for headings and text */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'ABeeZee', sans-serif;
-    font-weight: 600;
+/* Navbar styles */
+.navbar {
+    position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: transparent;
+        color: black;
+        padding: 30px;
+        /* Initial padding */
+        transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+        box-shadow: none;
+    }
+        .navbar.scrolled {
+            background-color: #28a745;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            /* Reduced padding */
+            transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+        }
+        .navbar .nav-link,
+        .navbar .dropdown-toggle {
+            color: black !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar.scrolled .nav-link,
+        .navbar.scrolled .dropdown-toggle {
+            color: white !important;
+        }
+    
+        /* Navbar buttons */
+        .navbar .btn-outline-primary {
+            border-color: black;
+            color: black;
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+    
+        .navbar.scrolled .btn-outline-primary {
+            border-color: white;
+            color: white;
+        }
+    
+        .navbar .btn-outline-primary:hover {
+            background-color: #218838;
+            color: white !important;
+            border-color: #218838;
+        }
+    
+        /* Navbar logo text */
+        .logo-text {
+            color: black;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+    
+        .navbar.scrolled .logo-text {
+            color: white;
+        }
+    
+        /* Navbar logo image */
+        .logo-section img {
+            max-width: 400px;
+            max-height: 400px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: scale(1);
+            /* Default size */
 }
 
-p,
-span,
-a,
-li {
-    font-family: 'ABeeZee', sans-serif;
-    font-weight: 400;
+.navbar.scrolled .logo-section img {
+    transform: scale(0.8);
+    /* Scale down when scrolled */
+    opacity: 0.9;
 }
 
-button {
-    font-family: 'ABeeZee', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
+/* Hamburger menu (for mobile view) */
+.navbar-toggler {
+    background-color: lightGrey;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
+.navbar.scrolled .navbar-toggler {
+    background-color: white;
+}
 
+/* Carousel */
 .carousel-item {
     height: 500px;
-    /* Set the desired height */
     overflow: hidden;
-    /* Hide overflow if the image is larger than the container */
 }
 
 .carousel-image {
     object-fit: cover;
-    /* Ensure the image covers the area while maintaining its aspect ratio */
     height: 100%;
-    /* Stretch the image to fill the height of the carousel item */
     width: 100%;
-    /* Ensure the image covers the entire width */
 }
-
 
 .carousel-caption h1 {
     color: rgb(42, 227, 42);
-    /* Change the primary text color to green */
 }
 
+/* Hero text shadow */
+.hero-text {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
 
+/* Card Styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Latest News Section */
 #latest-news .card {
     border: none;
     border-radius: 10px;
@@ -88,22 +159,10 @@ button {
 #latest-news .btn-primary {
     margin-top: auto;
 }
-.video-frame {
-    border-radius: 10px;
-    /* Adjust the value as needed */
-}
 
-.btn-outline-primary:hover {
-    background-color: #28a745 !important;
-    color: white !important;
-    border-radius: 5px;
-    /* Ensure the rounded corners are preserved on hover */
-}
-
-/* Rounded corners for the donate button */
+/* Rounded corners for buttons */
 .btn-primary {
     border-radius: 5px;
-    /* Rounded corners for CTA button */
     background-color: white !important;
     border-color: #28a745 !important;
     color: #218838 !important;
@@ -112,12 +171,21 @@ button {
 .btn-primary:hover {
     background-color: rgba(255, 255, 255, 0.74) !important;
     border-color: #218838 !important;
-    border-radius: 5px;
     color: #218838 !important;
-    /* Ensure the rounded corners are preserved on hover */
 }
 
+.btn-outline-primary:hover {
+    background-color: #28a745 !important;
+    color: white !important;
+    border-radius: 5px;
+}
 
+/* Video frame */
+.video-frame {
+    border-radius: 10px;
+}
+
+/* Avatar container */
 .avatar-container {
     width: 100%;
     display: flex;
@@ -128,148 +196,120 @@ button {
 
 .avatar {
     width: 140px;
-    /* Adjust size as needed */
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    /* Optional border */
 }
 
 .avatar-icon {
     font-size: 140px;
-    /* Adjust to the desired size */
     color: #ccc;
-    /* Optional: customize the icon color */
 }
 
-
-.card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.card-text {
-    font-size: 1rem;
-    color: #555;
-}
-/* Update carousel control icons */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: darkgreen;
-    /* Set the color to dark green */
-    border-radius: 50%;
-    /* Add rounded edges */
-    width: 40px;
-    /* Adjust icon size if needed */
-    height: 40px;
-    /* Adjust icon size if needed */
-    padding: 10px;
-    /* Add padding around the icon */
-}
-
-/* Update carousel control buttons */
+/* Responsive carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
     background-color: darkgreen;
-    /* Solid dark green background */
     border-radius: 50%;
-    /* Add rounded edges */
     color: white;
-    /* Ensure good contrast for accessibility */
     width: 60px;
-    /* Adjust button size */
     height: 60px;
-    /* Adjust button size */
     display: flex;
-    /* Center align the icons */
     justify-content: center;
-    /* Center align horizontally */
     align-items: center;
-    /* Center align vertically */
     position: absolute;
-    /* Make sure the buttons stay within the carousel */
     top: 50%;
-    /* Align vertically to the center */
     transform: translateY(-50%);
-    /* Center alignment adjustment */
     z-index: 5;
-    /* Ensure the controls are above the carousel content */
 }
 
-/* Specific positioning for left and right controls */
 .carousel-control-prev {
     left: 10px;
-    /* Adjust as needed for spacing */
 }
 
 .carousel-control-next {
     right: 10px;
-    /* Adjust as needed for spacing */
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: darkgreen;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
 
+@media (max-width: 768px) {
+
+    .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
+    }
 
 /* General carousel text styles */
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent black background */
     padding: 15px;
-    /* Add padding around text */
     border-radius: 10px;
-    /* Rounded corners for a clean look */
     max-width: 90%;
-    /* Prevent text from stretching too wide */
     margin: 0 auto;
-    /* Center align the caption */
     text-align: center;
-    /* Center text alignment */
 }
 
-/* Heading styles */
 .carousel-caption h1,
 .carousel-caption h2 {
     color: white;
-    /* Ensure text is readable */
     margin-bottom: 10px;
     font-size: 2rem;
-    /* Adjust for smaller screens */
 }
 
-/* Paragraph styles */
 .carousel-caption p {
     color: white;
     font-size: 1rem;
-    /* Adjust font size for readability */
 }
 
-/* Responsive text adjustments for mobile */
 @media (max-width: 576px) {
     .carousel-caption h1 {
         font-size: 1.5rem;
-        /* Smaller headings on mobile */
-    }
-
-    .carousel-caption h2 {
-        font-size: 1.2rem;
     }
 
     .carousel-caption p {
         font-size: 0.9rem;
-        /* Smaller paragraph text */
     }
 
     .carousel-caption {
         padding: 10px;
-        /* Reduce padding for small screens */
-    }
-}
+        /* Adjust the logo size by default */
+            .logo-section img {
+                max-width: 400px;
+                max-height: 400px;
+        
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                transform: scale(1);
+                /* Default size */
+            }
+        
+            /* Scale down the logo when scrolled */
+            .logo-section img.scrolled {
+                transform: scale(0.8);
+                /* Adjust scale value as needed */
+                opacity: 0.8;
+                /* Slight fade-out effect */
+            }
+        
+            /* Navbar transition to make it responsive to scroll */
+            .navbar.scrolled {
+                background-color: #28a745;
+                color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+        }
+        
+        .navbar.scrolled .nav-link,
+        .navbar.scrolled .btn-outline-primary {
+            color: white !important;
+        }
+        }
