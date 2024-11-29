@@ -2,6 +2,80 @@ from django.db import models
 
 from django_ckeditor_5.fields import CKEditor5Field
 
+
+class Event(models.Model):
+    EVENT_TYPE_CHOICES = [
+        ("upcoming", "Upcoming"),
+        ("past", "Past"),
+    ]
+
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    date = models.DateTimeField()
+    event_type = models.CharField(max_length=10, choices=EVENT_TYPE_CHOICES)
+    location = models.CharField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to="events/", null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["-date"]  # Order events by date (newest first)
+
+
+class PartnershipSubmission(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=15)
+    organisation = models.CharField(max_length=100, blank=True)
+    date_submitted = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(null=True, blank=True)
+
+    partnership_category = models.CharField(
+        max_length=50,
+        choices=[
+            ("Resource Partner", "Resource Partner"),
+            ("Network Partner", "Network Partner"),
+            ("Learning Partner", "Learning Partner"),
+        ],
+    )
+    message = models.TextField()
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} - {self.partnership_category}"
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=255)
+    url = models.URLField(max_length=500)
+
+    def __str__(self):
+        return self.title
+
+
+class Publication(models.Model):
+    title = models.CharField(max_length=200)
+    cover_image = models.ImageField(upload_to="publications/covers/")
+    file = models.FileField(upload_to="publications/files/")
+    date = models.DateField()
+
+    def __str__(self):
+        return self.title
+
+
+class Contact(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    message = models.TextField()
+    date_submitted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} - {self.email}"
+
+
 class News(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to="news_images/")
@@ -53,3 +127,26 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Donation(models.Model):
+    # Options for the Partnership Category dropdown
+    PARTNERSHIP_CATEGORIES = [
+        ("Resource Partner", "Resource Partner"),
+        ("Learning Partner", "Learning Partner"),
+        ("Network Partner", "Network Partner"),
+    ]
+
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=15)
+    organization = models.CharField(max_length=200, blank=True, null=True)
+    partnership_category = models.CharField(
+        max_length=50, choices=PARTNERSHIP_CATEGORIES
+    )
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} - {self.email}"

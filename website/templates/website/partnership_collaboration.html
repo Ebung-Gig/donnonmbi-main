@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Partnership & Collaboration | DANNONMBI CARE FOUNDATION{% endblock %}
+
+{% block content %}
+
+<style>
+  /* Custom styles for the active accordion button */
+  .accordion-button:not(.collapsed) {
+    background-color: #28a745; /* Light Green background */
+    color: white; /* White text color */
+    border-color: #28a745; /* Light Green border color */
+  }
+
+  /* Optional: Change the icon color when the accordion is expanded */
+  .accordion-button:not(.collapsed) .accordion-icon {
+    color: white;
+  }
+
+  /* Optional: Modify hover state for the accordion button */
+  .accordion-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    color: white;
+    border-color: #218838; /* Darker green border on hover */
+  }
+
+  .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.5); /* Light Green shadow */
+    border-color: #28a745; /* Light Green border color */
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="bg-success text-white text-center py-5" style="background-image: url('{% static 'images/image14.jpg' %}'); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Partnership & Collaboration</h1>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container py-5">
+
+  <!-- Grid Layout for Content -->
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Partner with Us</h2>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      </p>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="col-md-4">
+      <h4>Our Partnership Categories</h4>
+      
+      <!-- Custom Green Accordion -->
+      <div class="accordion" id="partnershipCategories">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Resource Partners
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#partnershipCategories">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button custom-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Network Partners
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#partnershipCategories">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button custom-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Learning Partners
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#partnershipCategories">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="mt-5">
+    <h3 class="text-center">Fill Out the Partnership Form</h3>
+    <p class="text-center">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    </p>
+
+    <!-- Form container -->
+    <div class="form-container">
+
+      <form method="post">
+        {% csrf_token %}
+
+        <!-- First Name -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="id_first_name" class="form-label">First Name</label>
+            <input type="text" name="first_name" value="{{ form.first_name.value|default:'' }}" class="form-control" autocomplete="off">
+            {% if form.first_name.errors %}
+              <div class="text-danger">
+                {% for error in form.first_name.errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- Last Name -->
+          <div class="col-md-6">
+            <label for="id_last_name" class="form-label">Last Name</label>
+            <input type="text" name="last_name" value="{{ form.last_name.value|default:'' }}" class="form-control" autocomplete="off">
+            {% if form.last_name.errors %}
+              <div class="text-danger">
+                {% for error in form.last_name.errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="id_email" class="form-label">Email Address</label>
+          <input type="email" name="email" value="{{ form.email.value|default:'' }}" class="form-control" autocomplete="off">
+          {% if form.email.errors %}
+            <div class="text-danger">
+              {% for error in form.email.errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mb-3">
+          <label for="id_phone_number" class="form-label">Phone Number</label>
+          <input type="text" name="phone_number" value="{{ form.phone_number.value|default:'' }}" class="form-control" autocomplete="off">
+          {% if form.phone_number.errors %}
+            <div class="text-danger">
+              {% for error in form.phone_number.errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Organisation -->
+        <div class="mb-3">
+          <label for="id_organisation" class="form-label">Your Organisation (Optional)</label>
+          <input type="text" name="organisation" value="{{ form.organisation.value|default:'' }}" class="form-control" autocomplete="off">
+          {% if form.organisation.errors %}
+            <div class="text-danger">
+              {% for error in form.organisation.errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Partnership Category -->
+        <div class="mb-3">
+          <label for="id_partnership_category" class="form-label">Partnership Category</label>
+          <select name="partnership_category" class="form-control">
+            <option value="Resource Partner" {% if form.partnership_category.value == "Resource Partner" %}selected{% endif %}>Resource Partner</option>
+            <option value="Network Partner" {% if form.partnership_category.value == "Network Partner" %}selected{% endif %}>Network Partner</option>
+            <option value="Learning Partner" {% if form.partnership_category.value == "Learning Partner" %}selected{% endif %}>Learning Partner</option>
+          </select>
+          {% if form.partnership_category.errors %}
+            <div class="text-danger">
+              {% for error in form.partnership_category.errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="mb-3">
+          <label for="id_message" class="form-label">Message</label>
+          <textarea name="message" rows="4" placeholder="How do you want to support us?" class="form-control">{{ form.message.value|default:'' }}</textarea>
+          {% if form.message.errors %}
+            <div class="text-danger">
+              {% for error in form.message.errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

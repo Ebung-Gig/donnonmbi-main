@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}DONNONMBI CARE FOUNDATION{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>{% block title %}DANNONMBI CARE FOUNDATION{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Animate.css -->
@@ -17,68 +18,116 @@
 
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Responsive logo */
-        .logo-section img {
-            max-width: 100%; /* Ensures it scales with the screen size */
-            height: auto; /* Maintains aspect ratio */
-            max-height: 100px; /* Adjust this as needed */
-        }
-
+        /* Navbar background and text color */
         .navbar {
-            background-color: #f8f9fa; /* Neutral color for the navbar */
-            position: sticky; /* Makes the navbar stick to the top */
-            top: 0; /* Sticks it to the top of the page */
-            z-index: 1000; /* Ensures the navbar is on top of other elements */
-            width: 100%; /* Ensures the navbar spans the full width of the screen */
+            background-color: #28a745; /* Green background */
+            position: sticky; /* Keeps navbar fixed at the top */
+            top: 0;
+            z-index: 1000; /* Ensures it stays on top */
+            width: 100%;
         }
-
+    
+        /* Navbar links and dropdown */
         .navbar .nav-link,
         .navbar .dropdown-toggle {
-            color: black !important;
+            color: white !important; /* White text */
         }
-
+    
+        /* Search button visibility */
+        .navbar .btn-outline-primary {
+            border-color: white !important; /* White border for the button */
+            color: white !important; /* White text */
+        }
+    
+        .navbar .btn-outline-primary:hover {
+            background-color: #218838 !important; /* Dark green on hover */
+            color: white !important; /* Ensure text stays white */
+        }
+    
+        /* Navbar input (e.g., search bar) */
+        .navbar .form-control {
+            background-color: white; /* White background for input fields */
+            color: black; /* Black text for better contrast */
+        }
+    
+        .navbar .form-control::placeholder {
+            color: #d6d6d6; /* Light gray placeholder */
+        }
+    
+        /* Logo size adjustment */
+        .logo-section img {
+            max-width: 200px; /* Limits the width */
+            height: auto; /* Maintains aspect ratio */
+            max-height: 200px; /* Ensures logo isn't too tall */
+        }
+    
+        /* Navbar hover styles */
         .navbar .nav-link:hover,
         .navbar .dropdown-item:hover {
-            background-color: #d4edda; /* Light green hover background */
-            color: #28a745 !important; /* Dark green hover text */
+            background-color: #218838; /* Dark green hover background */
+            color: white !important; /* Ensure text stays white */
         }
-
-        .btn-primary {
-            background-color: #28a745 !important; /* Green for CTA buttons */
-            border-color: #28a745 !important;
-        }
-
-        .btn-primary:hover {
-            background-color: #218838 !important; /* Darker green on hover */
-            border-color: #218838 !important;
-        }
-
-        .btn-outline-primary {
-            border-color: #28a745 !important; /* Green border for outline buttons */
-            color: #28a745 !important;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #28a745 !important;
-            color: white !important;
-        }
-
+    
+        /* Dropdown menu background */
         .dropdown-menu {
-            white-space: normal; /* Allows wrapping for long text */
-            padding: 0.5rem 1rem; /* Space around items */
+            background-color: white; /* White background for dropdown */
+            border: none; /* Removes default borders */
         }
-
-        /* Mobile-specific styles */
+    
+        /* Dropdown menu items */
+        .dropdown-item {
+            color: #28a745 !important; /* Green text for items */
+        }
+    
+        /* Hover effect for dropdown items */
+        .dropdown-item:hover {
+            background-color: #f1f1f1; /* Light gray on hover */
+            color: #218838 !important; /* Dark green text */
+        }
+    
+        /* Ensure padding is consistent */
+        .navbar {
+            padding: 1rem 1.5rem;
+        }
+    
+        /* Hamburger icon (collapsed menu button) */
+        .navbar-toggler {
+            background-color: white; /* White background for the button */
+            border: none; /* Removes the border */
+        }
+    
+        /* Remove unwanted margins or padding */
+        .navbar-collapse {
+            padding: 0.5rem;
+        }
+    
+        /* Mobile-specific styling */
         @media (max-width: 768px) {
-            .search-mobile {
-                padding: 1rem 0; /* Add vertical padding */
+            .navbar {
+                padding: 0.75rem 1rem; /* Smaller padding for mobile */
+            }
+    
+            .logo-section img {
+                max-width: 200px; /* Slightly smaller logo for mobile */
+                max-height: 200px;
             }
         }
+
+        /* Default - No top margin */
+.donate-btn {
+    margin-top: 0;
+}
+
+/* Mobile-specific - Add margin-top to the donate button */
+@media (max-width: 768px) {
+    .donate-btn {
+        margin-top: 20px; /* Adjust this value to your preference */
+    }
+}
+
     </style>
+    
+    
 </head>
 <body>
     <!-- Logo Section -->
@@ -116,21 +165,32 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="programmesDropdown">
                             <li><a class="dropdown-item" href="{% url 'health_programme' %}">HEALTH</a></li>
-                            <li><a class="dropdown-item" href="#">EMERGENCY RELIEF</a></li>
-                            <li><a class="dropdown-item" href="#">EDUCATION</a></li>
-                            <li><a class="dropdown-item" href="#">SKILLS DEVELOPMENT</a></li>
-                            <li><a class="dropdown-item" href="#">ADVOCACY AWARENESS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'emergency_relief' %}">EMERGENCY RELIEF</a></li>
+                            <li><a class="dropdown-item" href="{% url 'education_programme' %}">EDUCATION</a></li>
+                            <li><a class="dropdown-item" href="{% url 'skills_development' %}">SKILLS DEVELOPMENT</a></li>
+                            <li><a class="dropdown-item" href="{% url 'advocacy_awareness' %}">ADVOCACY AWARENESS</a></li>
+                        </ul>
+                    </li>
+                    <!-- GRANTMAKING Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="grantMakingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            GRANTMAKING
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="grantMakingDropdown">
+                            <li><a class="dropdown-item" href="{% url 'annual_grant' %}">ANNUAL GRANTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'discretionary_grant' %}">DISCRETIONARY GRANTS </a></li>
+                            <li><a class="dropdown-item" href="{% url 'partnership_collaboration' %}">PARTNERSHIPS</a></li>
                         </ul>
                     </li>
                 
                     <!-- EVENTS -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EVENTS</a>
+                        <a class="nav-link" href="{% url 'event_list' %}">EVENTS</a>
                     </li>
                 
                     <!-- SCHOLARSHIP -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SCHOLARSHIP</a>
+                        <a class="nav-link" href="{% url 'scholarship' %}">SCHOLARSHIP</a>
                     </li>
                 
                     <!-- MEDIA CENTER Dropdown -->
@@ -139,25 +199,27 @@
                             MEDIA CENTER
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="mediaCenterDropdown">
-                            <li><a class="dropdown-item" href="#">LATEST NEWS</a></li>
-                            <li><a class="dropdown-item" href="#">PUBLICATIONS</a></li>
-                            <li><a class="dropdown-item" href="#">VIDEOS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'news_list' %}">LATEST NEWS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'publication_list' %}">PUBLICATIONS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'video_list' %}">VIDEOS</a></li>
                         </ul>
                     </li>
                 
                     <!-- CONTACT US -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
+                        <a class="nav-link" href="{% url 'contact' %}">CONTACT US</a>
                     </li>
                 </ul>
                 
                 <!-- Search Form -->
-                <form class="d-flex search-mobile me-3">
+                {% comment %} <form class="d-flex search-mobile me-3">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
+                </form> {% endcomment %}
                 <!-- Call to Action -->
-                <a href="#" class="btn btn-primary">DONATE</a>
+
+
+                <a href="{% url 'donate' %}" class="btn btn-primary donate-btn">DONATE</a>
             </div>
         </div>
     </nav>
@@ -167,93 +229,58 @@
         {% block content %}{% endblock %}
     </main>
 
+
     <!-- Footer -->
-<footer class="text-center text-lg-start text-white" style="background-color: #1c2331;">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-between align-items-center p-4" style="background-color: #006400;">
-        <!-- Left -->
-        <div class="me-5">
-            <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Left -->
-    
-        <!-- Right -->
-        <div class="d-flex flex-wrap justify-content-start">
-            <a href="https://www.facebook.com/donnonmbi" class="text-white me-4 mb-2 mb-md-0"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/donnonmbi" class="text-white me-4 mb-2 mb-md-0"><i class="fab fa-twitter"></i></a>
-            <a href="https://plus.google.com/donnonmbi" class="text-white me-4 mb-2 mb-md-0"><i class="fab fa-google"></i></a>
-            <a href="https://www.instagram.com/donnonmbi" class="text-white me-4 mb-2 mb-md-0"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/donnonmbi" class="text-white me-4 mb-2 mb-md-0"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <!-- Right -->
-    </section>
-    
-    <!-- Section: Social media -->
+<footer class="text-white py-5" style="background-color: #155724;">
+  <div class="container">
+      <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4 mb-4">
+              <h5>About Us</h5>
+              <p class="small">
+                  Dannonmbi Care Foundation is dedicated to making a difference through impactful programs in health, education, and advocacy.
+              </p>
+              <a href="{% url 'about' %}" class="text-white text-decoration-none">Learn More</a>
+          </div>
 
-    <!-- Section: Links -->
-    <section>
-        <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-                    <h6 class="text-uppercase fw-bold">Donnonmbi Foundation</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-                    <p>
-                        Donnonmbi Foundation is committed to serving the community through educational programs, healthcare initiatives, and various charitable activities.
-                    </p>
-                </div>
-                <!-- Grid column -->
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a href="{% url 'health_programme' %}" class="text-white text-decoration-none">Health Programmes</a></li>
+                  <li><a href="{% url 'team' %}" class="text-white text-decoration-none">Our Team</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Events</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+              </ul>
+          </div>
 
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">Important Links</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-                    <p><a href="{% url 'about' %}" class="text-white">About Us</a></p>
-                    <p><a href="#!" class="text-white">Our Services</a></p>
-                    <p><a href="#!" class="text-white">Get Involved</a></p>
-                    <p><a href="#!" class="text-white">Donate</a></p>
-                </div>
-                <!-- Grid column -->
+          <!-- Contact Section -->
+          <div class="col-md-4 mb-4">
+              <h5>Contact</h5>
+              <ul class="list-unstyled small">
+                  <li><i class="fas fa-map-marker-alt me-2"></i> 123 Foundation Street, City, Country</li>
+                  <li><i class="fas fa-phone-alt me-2"></i> +123 456 7890</li>
+                  <li><i class="fas fa-envelope me-2"></i> info@dannonmbicare.org</li>
+              </ul>
+              <div>
+                  <!-- Social Media Links -->
+                  <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
 
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">Useful Links</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-                    <p><a href="#!" class="text-white">Your Account</a></p>
-                    <p><a href="#!" class="text-white">Become an Affiliate</a></p>
-                    <p><a href="#!" class="text-white">Shipping Rates</a></p>
-                    <p><a href="#!" class="text-white">Help</a></p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">Contact Us</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-                    <p><i class="fas fa-home mr-3"></i> 35 Fandriana Close, Wuse II, Abuja, Nigeria</p>
-                    <p><i class="fas fa-envelope mr-3"></i> <a href="mailto:contact@Donnonmbifoundation.org" class="text-white">contact@Donnonmbifoundation.org</a></p>
-                    <p><i class="fas fa-phone mr-3"></i> +234 906 5447 852</p>
-                    <p><i class="fas fa-print mr-3"></i> +234 806 685 2870</p>
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-        </div>
-    </section>
-    <!-- Section: Links -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2024 Copyright: Donnonmbi Foundation. All rights reserved.
-    </div>
-    <!-- Copyright -->
+      <!-- Footer Bottom -->
+      <div class="text-center pt-4 border-top border-white">
+          <p class="small mb-0">&copy; 2024 Dannonmbi Care Foundation. All Rights Reserved.</p>
+      </div>
+  </div>
 </footer>
-<!-- Footer -->
+
+
+
 
   
 

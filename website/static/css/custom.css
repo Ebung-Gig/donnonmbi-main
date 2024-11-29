@@ -10,7 +10,7 @@
 
 /* Use Poppins for the entire site */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ABeeZee', sans-serif;
 }
 
 /* Example: Set different weights for headings and text */
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ABeeZee', sans-serif;
     font-weight: 600;
 }
 
@@ -28,18 +28,12 @@ p,
 span,
 a,
 li {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ABeeZee', sans-serif;
     font-weight: 400;
 }
 
-/* Add fallback fonts */
-.navbar-brand {
-    font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 700;
-}
-
 button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ABeeZee', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -99,35 +93,6 @@ button {
     /* Adjust the value as needed */
 }
 
-
-/* Rounded corners for navbar links */
-.navbar .nav-link,
-.navbar .dropdown-item {
-    border-radius: 5px;
-    /* Adds rounded corners to buttons */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition for background color and text color */
-}
-
-.navbar .nav-link:hover,
-.navbar .dropdown-item:hover {
-    background-color: #d4edda;
-    /* Light green hover background */
-    color: #28a745 !important;
-    /* Dark green hover text */
-    border-radius: 5px;
-    /* Ensure the rounded corners are preserved on hover */
-}
-
-/* Rounded corners for the search button */
-.btn-outline-primary {
-    border-radius: 5px;
-    /* Rounded corners */
-    border-color: #28a745 !important;
-    /* Green border for outline buttons */
-    color: #28a745 !important;
-}
-
 .btn-outline-primary:hover {
     background-color: #28a745 !important;
     color: white !important;
@@ -139,14 +104,16 @@ button {
 .btn-primary {
     border-radius: 5px;
     /* Rounded corners for CTA button */
-    background-color: #28a745 !important;
+    background-color: white !important;
     border-color: #28a745 !important;
+    color: #218838 !important;
 }
 
 .btn-primary:hover {
-    background-color: #218838 !important;
+    background-color: rgba(255, 255, 255, 0.74) !important;
     border-color: #218838 !important;
     border-radius: 5px;
+    color: #218838 !important;
     /* Ensure the rounded corners are preserved on hover */
 }
 
@@ -194,4 +161,115 @@ button {
 .card-text {
     font-size: 1rem;
     color: #555;
+}
+/* Update carousel control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: darkgreen;
+    /* Set the color to dark green */
+    border-radius: 50%;
+    /* Add rounded edges */
+    width: 40px;
+    /* Adjust icon size if needed */
+    height: 40px;
+    /* Adjust icon size if needed */
+    padding: 10px;
+    /* Add padding around the icon */
+}
+
+/* Update carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: darkgreen;
+    /* Solid dark green background */
+    border-radius: 50%;
+    /* Add rounded edges */
+    color: white;
+    /* Ensure good contrast for accessibility */
+    width: 60px;
+    /* Adjust button size */
+    height: 60px;
+    /* Adjust button size */
+    display: flex;
+    /* Center align the icons */
+    justify-content: center;
+    /* Center align horizontally */
+    align-items: center;
+    /* Center align vertically */
+    position: absolute;
+    /* Make sure the buttons stay within the carousel */
+    top: 50%;
+    /* Align vertically to the center */
+    transform: translateY(-50%);
+    /* Center alignment adjustment */
+    z-index: 5;
+    /* Ensure the controls are above the carousel content */
+}
+
+/* Specific positioning for left and right controls */
+.carousel-control-prev {
+    left: 10px;
+    /* Adjust as needed for spacing */
+}
+
+.carousel-control-next {
+    right: 10px;
+    /* Adjust as needed for spacing */
+}
+
+
+
+/* General carousel text styles */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent black background */
+    padding: 15px;
+    /* Add padding around text */
+    border-radius: 10px;
+    /* Rounded corners for a clean look */
+    max-width: 90%;
+    /* Prevent text from stretching too wide */
+    margin: 0 auto;
+    /* Center align the caption */
+    text-align: center;
+    /* Center text alignment */
+}
+
+/* Heading styles */
+.carousel-caption h1,
+.carousel-caption h2 {
+    color: white;
+    /* Ensure text is readable */
+    margin-bottom: 10px;
+    font-size: 2rem;
+    /* Adjust for smaller screens */
+}
+
+/* Paragraph styles */
+.carousel-caption p {
+    color: white;
+    font-size: 1rem;
+    /* Adjust font size for readability */
+}
+
+/* Responsive text adjustments for mobile */
+@media (max-width: 576px) {
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+        /* Smaller headings on mobile */
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+        /* Smaller paragraph text */
+    }
+
+    .carousel-caption {
+        padding: 10px;
+        /* Reduce padding for small screens */
+    }
 }

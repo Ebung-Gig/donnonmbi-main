@@ -1,11 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Latest News | DONNONMBI CARE FOUNDATION{% endblock %}
+
+{% block title %}Latest News | DANNONMBI CARE FOUNDATION{% endblock %}
 
 {% block content %}
+
+
+<!-- Hero Section with Background Image from Static Files -->
+<section
+  class="bg-success text-white text-center py-5"
+  style="
+    background-image: url('{% static 'images/image17.jpg' %}');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div class="container">
+    <h1 class="display-4 fw-bold">Latest News</h1>
+  </div>
+</section>
+
 <section id="news-list" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-4">Latest News</h2>
         <div class="row">
             {% for news in page_obj %}
             <div class="col-md-4 mb-4 d-flex align-items-stretch">
