@@ -10,7 +10,15 @@ from website.models import (
     Contact,
     Video,
     PartnershipSubmission,
+    Volunteer,
 )
+
+admin.site.register(Volunteer)
+
+
+class VolunteerAdmin(admin.ModelAdmin):
+    list_display = ("name", "info")
+    search_fields = ("name", "info")
 
 
 @admin.register(Event)

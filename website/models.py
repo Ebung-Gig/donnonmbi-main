@@ -3,6 +3,15 @@ from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 
 
+class Volunteer(models.Model):
+    name = models.CharField(max_length=100)
+    info = models.TextField()
+    profile_picture = models.ImageField(upload_to="volunteers/", blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Event(models.Model):
     EVENT_TYPE_CHOICES = [
         ("upcoming", "Upcoming"),

@@ -27,6 +27,7 @@ from .views import (
     trustee_detail,
     emergency_relief,
     video_list,
+    volunteer_list,
 )
 
 urlpatterns = [
@@ -64,4 +65,5 @@ urlpatterns = [
     ),
     path("thank-you/", thank_you_view, name="thank_you_page"),
     path("events/", event_list, name="event_list"),
+    path("volunteers/", volunteer_list, name="volunteer_list"),
 ]

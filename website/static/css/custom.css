@@ -6,7 +6,7 @@ body {
 /* Navbar styles */
 .navbar {
     position: sticky;
-        top: 0;
+    top: 0;
         z-index: 1000;
         background-color: transparent;
         color: black;
@@ -15,62 +15,67 @@ body {
         transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
         box-shadow: none;
     }
-        .navbar.scrolled {
-            background-color: #28a745;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            /* Reduced padding */
-            transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
-        }
-        .navbar .nav-link,
-        .navbar .dropdown-toggle {
-            color: black !important;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .navbar.scrolled .nav-link,
-        .navbar.scrolled .dropdown-toggle {
-            color: white !important;
-        }
+
+.navbar.scrolled {
+    /* nav green */
+    background-color: #28a745;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        /* Reduced padding */
+        transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+    }
+
+.navbar .nav-link,
+.navbar .dropdown-toggle {
+    color: black !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .dropdown-toggle {
+
+    color: white !important;
+    }
     
-        /* Navbar buttons */
-        .navbar .btn-outline-primary {
-            border-color: black;
-            color: black;
-            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-        }
+    /* Navbar buttons */
+    .navbar .btn-outline-primary {
+        border-color: black;
+        color: black;
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
     
-        .navbar.scrolled .btn-outline-primary {
-            border-color: white;
-            color: white;
-        }
+    .navbar.scrolled .btn-outline-primary {
+        border-color: white;
+        color: white;
+    }
     
-        .navbar .btn-outline-primary:hover {
-            background-color: #218838;
-            color: white !important;
-            border-color: #218838;
-        }
+    .navbar .btn-outline-primary:hover {
+        background-color: #218838;
+        color: white !important;
+        border-color: #218838;
+    }
     
-        /* Navbar logo text */
-        .logo-text {
-            color: black;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    /* Navbar logo text */
+    .logo-text {
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
     
-        .navbar.scrolled .logo-text {
-            color: white;
-        }
+    .navbar.scrolled .logo-text {
+        color: white;
+    }
     
-        /* Navbar logo image */
-        .logo-section img {
-            max-width: 400px;
-            max-height: 400px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            transform: scale(1);
-            /* Default size */
+    /* Navbar logo image */
+    .logo-section img {
+    max-width: 200px;
+        max-height: 200px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform: scale(1);
+        /* Default size */
 }
 
 .navbar.scrolled .logo-section img {
@@ -243,7 +248,7 @@ body {
 @media (max-width: 768px) {
 
     .carousel-control-prev,
-        .carousel-control-next {
+    .carousel-control-next {
             display: none;
         }
     }
@@ -281,16 +286,17 @@ body {
 
     .carousel-caption {
         padding: 10px;
+
         /* Adjust the logo size by default */
-            .logo-section img {
-                max-width: 400px;
-                max-height: 400px;
-        
+        .logo-section img {
+            max-width: 200px;
+                max-height: 200px;
+            
                 transition: transform 0.3s ease, opacity 0.3s ease;
                 transform: scale(1);
                 /* Default size */
             }
-        
+            
             /* Scale down the logo when scrolled */
             .logo-section img.scrolled {
                 transform: scale(0.8);
@@ -298,7 +304,7 @@ body {
                 opacity: 0.8;
                 /* Slight fade-out effect */
             }
-        
+            
             /* Navbar transition to make it responsive to scroll */
             .navbar.scrolled {
                 background-color: #28a745;
@@ -306,10 +312,74 @@ body {
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 transition: all 0.3s ease;
             }
-        }
-        
-        .navbar.scrolled .nav-link,
-        .navbar.scrolled .btn-outline-primary {
-            color: white !important;
-        }
-        }
+            }
+            
+            .navbar.scrolled .nav-link,
+            .navbar.scrolled .btn-outline-primary {
+                color: white !important;
+            }
+            }
+.top-bar {
+    background-color: #155724;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.nav-link {
+    color: #155724;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #0a4c1f;
+}
+
+
+
+/* Nav Links Styling */
+.nav-link {
+    padding: 0.5rem 0;
+    /* Adjust padding */
+    font-size: 0.9rem;
+    color: #155724;
+}
+
+/* Change the highlight color of the dropdown item on hover */
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus {
+    background-color: #28a745;
+    /* Green background when hovered or focused */
+    color: white;
+    /* Ensure the text color is white for readability */
+}
+
+/* Change the highlight color of the dropdown item when it's tapped (active) */
+.navbar .dropdown-menu .dropdown-item:active {
+    background-color: #28a745;
+    /* Green background when item is clicked/tapped */
+    color: white;
+    /* Text color */
+}

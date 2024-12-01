@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from .models import Contact, News, Publication, Team, Trustee, Video, Event
+from .models import Contact, News, Publication, Team, Trustee, Video, Event, Volunteer
 
 
 from django.shortcuts import get_object_or_404, render, redirect
@@ -247,3 +247,8 @@ def event_list(request):
             "past_page": past_page,
         },
     )
+
+
+def volunteer_list(request):
+    volunteers = Volunteer.objects.all()
+    return render(request, "website/volunteer_list.html", {"volunteers": volunteers})
