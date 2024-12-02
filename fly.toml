@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for donnonmbi on 2024-11-27T06:08:52+01:00
+# fly.toml app configuration file generated for dannonmbi on 2024-12-02T07:27:26+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'donnonmbi'
+app = 'dannonmbi'
 primary_region = 'cdg'
 console_command = '/code/manage.py shell'
 
