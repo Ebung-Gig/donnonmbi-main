@@ -1,12 +1,13 @@
 from django.db import models
 
 from django_ckeditor_5.fields import CKEditor5Field
+from cloudinary.models import CloudinaryField
 
 
 class Volunteer(models.Model):
     name = models.CharField(max_length=100)
     info = models.TextField()
-    profile_picture = models.ImageField(upload_to="volunteers/", blank=True, null=True)
+    profile_picture = CloudinaryField("volunteers", blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -23,7 +24,7 @@ class Event(models.Model):
     date = models.DateTimeField()
     event_type = models.CharField(max_length=10, choices=EVENT_TYPE_CHOICES)
     location = models.CharField(max_length=255, null=True, blank=True)
-    image = models.ImageField(upload_to="events/", null=True, blank=True)
+    image = CloudinaryField("events", null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -65,8 +66,8 @@ class Video(models.Model):
 
 class Publication(models.Model):
     title = models.CharField(max_length=200)
-    cover_image = models.ImageField(upload_to="publications/covers/")
-    file = models.FileField(upload_to="publications/files/")
+    cover_image = CloudinaryField("publications/covers")
+    file = models.FileField(upload_to="publications/files")
     date = models.DateField()
 
     def __str__(self):
@@ -87,7 +88,7 @@ class Contact(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="news_images/")
+    image = CloudinaryField("news_images")
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
 
@@ -108,7 +109,7 @@ class Trustee(models.Model):
     name = models.CharField(max_length=255)
 
     # Avatar/profile picture
-    picture = models.ImageField(upload_to="trustee_avatars/", blank=True, null=True)
+    picture = CloudinaryField("trustee_avatars", blank=True, null=True)
 
     # Position or role of the trustee
     position = models.CharField(max_length=255, blank=True, null=True)
