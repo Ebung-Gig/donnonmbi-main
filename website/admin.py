@@ -5,6 +5,7 @@ from website.models import (
     News,
     Publication,
     Team,
+    Testimonial,
     Trustee,
     Donation,
     Contact,
@@ -14,6 +15,12 @@ from website.models import (
 )
 
 admin.site.register(Volunteer)
+
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ("author", "text")
+    search_fields = ("author", "text")
 
 
 class VolunteerAdmin(admin.ModelAdmin):

@@ -1,5 +1,15 @@
 from django.core.paginator import Paginator
-from .models import Contact, News, Publication, Team, Trustee, Video, Event, Volunteer
+from .models import (
+    Contact,
+    News,
+    Publication,
+    Team,
+    Testimonial,
+    Trustee,
+    Video,
+    Event,
+    Volunteer,
+)
 
 
 from django.shortcuts import get_object_or_404, render, redirect
@@ -185,7 +195,10 @@ def annual_grant(request):
 
 
 def discretionary_grant(request):
-    return render(request, "website/discretionary_grant.html")
+    testimonials = Testimonial.objects.all()
+    return render(
+        request, "website/discretionary_grant.html", {"testimonials": testimonials}
+    )
 
 
 def partnership_collaboration(request):

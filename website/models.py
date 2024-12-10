@@ -4,6 +4,20 @@ from django_ckeditor_5.fields import CKEditor5Field
 from cloudinary.models import CloudinaryField
 
 
+class Testimonial(models.Model):
+    text = models.TextField(help_text="The testimonial text.", blank=True, null=True)
+    author = models.CharField(
+        max_length=255, help_text="The name of the testimonial author."
+    )
+
+    class Meta:
+        verbose_name = "Testimonial"
+        verbose_name_plural = "Testimonials"
+
+    def __str__(self):
+        return f"{self.author} - {self.text[:50]}..."
+
+
 class Volunteer(models.Model):
     name = models.CharField(max_length=100)
     info = models.TextField()
@@ -45,9 +59,13 @@ class PartnershipSubmission(models.Model):
     partnership_category = models.CharField(
         max_length=50,
         choices=[
-            ("Resource Partner", "Resource Partner"),
-            ("Network Partner", "Network Partner"),
-            ("Learning Partner", "Learning Partner"),
+            ("Corporate Partnerships", "Corporate Partnerships"),
+            ("NGO Collaborations", "NGO Collaborations"),
+            (
+                "Individual Donors and Philanthropists",
+                "Individual Donors and Philanthropists",
+            ),
+            ("Community Engagement", "Community Engagement"),
         ],
     )
     message = models.TextField()
@@ -142,9 +160,13 @@ class Team(models.Model):
 class Donation(models.Model):
     # Options for the Partnership Category dropdown
     PARTNERSHIP_CATEGORIES = [
-        ("Resource Partner", "Resource Partner"),
-        ("Learning Partner", "Learning Partner"),
-        ("Network Partner", "Network Partner"),
+        ("Corporate Partnerships", "Corporate Partnerships"),
+        ("NGO Collaborations", "NGO Collaborations"),
+        (
+            "Individual Donors and Philanthropists",
+            "Individual Donors and Philanthropists",
+        ),
+        ("Community Engagement", "Community Engagement"),
     ]
 
     first_name = models.CharField(max_length=100)
